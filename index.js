@@ -27,6 +27,11 @@ function speak() {
 
   // Стартиране на речта
   window.speechSynthesis.speak(speech);
+
+  // Изчистване на текста след приключване на речта
+  speech.onend = () => {
+    document.getElementById('input').value = '';
+  };
 }
 
 // Функция за спиране на речта
