@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Text to Speech</h1>
+      <div class="input-group">
+        <textarea
+          id="input"
+          placeholder="Enter text in english to convert to speech..."
+        ></textarea>
+      </div>
+
+      <div class="controls">
+        <div>
+          <label class="label">Accent</label>
+          <select id="language">
+            <option value="en-US">English</option>
+            <option value="de-DE">Deutsch</option>
+            <option value="fr-FR">Français</option>
+            <option value="es-ES">Español</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Speed</label>
+          <input
+            type="range"
+            id="rate"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+          <div class="range-value" id="rateValue">1.0</div>
+        </div>
+        <div>
+          <label class="label">Pitch of voice</label>
+          <input
+            type="range"
+            id="pitch"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+          <div class="range-value" id="pitchValue">1.0</div>
+        </div>
+      </div>
+      <div class="button-group">
+        <button onclick="speak()" id="speakButton">Speak</button>
+        <button onclick="stop()" id="stopButton">Stop</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
